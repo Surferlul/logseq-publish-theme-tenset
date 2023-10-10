@@ -20,5 +20,5 @@ runs:
       shell: bash
     - run: mkdir ${{ github.workspace }}/logseq/fonts
       shell: bash
-    - run: cp ${{ github.workspace }}/logseq-tenset-theme/build/*.ttf ${{ github.workspace }}/www/static/css/fonts/
+    - run: cp ${{ github.workspace }}/logseq-tenset-theme/build/*.ttf ${{ github.workspace }}/www/static/css/
       shell: bash
