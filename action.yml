@@ -14,6 +14,8 @@ runs:
         path: logseq-tenset-theme
     - run: npm --prefix ${{ github.workspace }}/logseq-tenset-theme i
       shell: bash
+    - run: find
+      shell: bash
     - run: npm --prefix ${{ github.workspace }}/logseq-tenset-theme run build
       shell: bash
     - run: cp ${{ github.workspace }}/logseq-tenset-theme/build/tenset-theme.css www/static/css/custom.css
