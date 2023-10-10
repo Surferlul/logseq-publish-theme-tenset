@@ -3,8 +3,6 @@ description: inserts logseq-tenset-theme to published site
 runs:
   using: composite
   steps:
-    - name: Check out repository code
-      uses: actions/checkout@v4
     - name: Set up Node
       uses: actions/setup-node@v3
     - name: Check out logseq-tenset-theme repo
