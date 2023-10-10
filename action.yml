@@ -1,0 +1,22 @@
+name: Logseq Publish apply Tenset theme
+description: inserts logseq-tenset-theme to published site
+runs:
+  using: composite
+  steps:
+    - name: Check out repository code
+      uses: actions/checkout@v4
+    - name: Set up Node
+      uses: actions/setup-node@v3
+    - name: Check out logseq-tenset-theme repo
+      uses: actions/checkout@v4
+      with:
+        repository: tenset-security/logseq-tenset-theme
+        path: logseq-tenset-theme
+    - run: npm --prefix ${{ github.workspace }}/logseq-tenset-theme i
+      shell: bash
+    - run: npm --prefix ${{ github.workspace }}/logseq-tenset-theme run build
+      shell: bash
+    - run: cp ${{ github.workspace }}/logseq-tenset-theme/build/tenset-theme.css ${{ github.workspace }}/static/css/custom.css
+      shell: bash
+    - run: cp ${{ github.workspace }}/logseq-tenset-theme/build/*.tff ${{ github.workspace }}/static/css/fonts/
+      shell: bash
