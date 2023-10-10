@@ -18,5 +18,7 @@ runs:
       shell: bash
     - run: cp ${{ github.workspace }}/logseq-tenset-theme/build/tenset-theme.css ${{ github.workspace }}/logseq/custom.css
       shell: bash
-    - run: cp ${{ github.workspace }}/logseq-tenset-theme/build/*.ttf ${{ github.workspace }}/logseq/
+    - run: mkdir ${{ github.workspace }}/logseq/fonts
+      shell: bash
+    - run: cp ${{ github.workspace }}/logseq-tenset-theme/build/*.ttf ${{ github.workspace }}/logseq/fonts
       shell: bash
