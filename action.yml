@@ -16,7 +16,7 @@ runs:
       shell: bash
     - run: npm --prefix ${{ github.workspace }}/logseq-tenset-theme run build
       shell: bash
-    - run: cp ${{ github.workspace }}/logseq-tenset-theme/build/tenset-theme.css ${{ github.workspace }}/static/css/custom.css
+    - run: cp ${{ github.workspace }}/logseq-tenset-theme/build/tenset-theme.css ${{ github.workspace }}/www/static/css/custom.css
       shell: bash
-    - run: cp ${{ github.workspace }}/logseq-tenset-theme/build/*.tff ${{ github.workspace }}/static/css/fonts/
+    - run: cp ${{ github.workspace }}/logseq-tenset-theme/build/*.tff ${{ github.workspace }}/www/static/css/fonts/
       shell: bash
