@@ -1,5 +1,5 @@
 name: Logseq Publish apply Tenset theme
-description: inserts logseq-tenset-theme to published site
+description: A postprocessor for logseq-spa. Applies logseq-tenset-theme to published site
 runs:
   using: composite
   steps:
@@ -14,11 +14,7 @@ runs:
       shell: bash
     - run: npm --prefix ${{ github.workspace }}/logseq-tenset-theme run build
       shell: bash
-    - run: find | grep www
-      shell: bash
     - run: cp ${{ github.workspace }}/logseq-tenset-theme/build/tenset-theme.css ${{ github.workspace }}/www/static/css/custom.css
-      shell: bash
-    - run: mkdir ${{ github.workspace }}/logseq/fonts
       shell: bash
     - run: cp ${{ github.workspace }}/logseq-tenset-theme/build/*.ttf ${{ github.workspace }}/www/static/css/
       shell: bash
